@@ -30,3 +30,6 @@ class UsersOrm(Base):
     higher = Mapped[bool]
 
 
+def create_db():
+    Base.metadata.drop_all(sync_engine)
+    Base.metadata.create_all(sync_engine)
